@@ -1,15 +1,20 @@
 package GUI;
 
 import javax.swing.*;
+
+
 public class GUI {
     public static JFrame f;
-    public GUI () {
+
+    private GUI() { /* blocks instantiation */ }
+
+    public static void initWindow() {
         // create a frame
-         f = new JFrame("Menu demo");
+        f = new JFrame("Menu demo");
 
         GUIMenu t = new GUIMenu();
 
-        // add menubar to frame
+        // add menu bar to frame
         f.setJMenuBar(t.menubar);
 
         // setting options
