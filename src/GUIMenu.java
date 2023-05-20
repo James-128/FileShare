@@ -1,26 +1,40 @@
 import javax.swing.*;
 
 public class GUIMenu {
-    public JMenuBar mb;
+    public JMenuBar menubar;
     GUIMenu () {
+        menubar = new JMenuBar();
 
-        // create a menubar
-        mb = new JMenuBar();
+        // adding menus to menu bar
+        menubar.add(fileMenu());
+        menubar.add(networkingMenu());
+    }
 
-        // create a menu
-        JMenu x = new JMenu("Menu");
+    JMenu networkingMenu () {
+        JMenu networking = new JMenu("Network");
 
-        // create menuitems
-        JMenuItem m1 = new JMenuItem("MenuItem1");
-        JMenuItem m2 = new JMenuItem("MenuItem2");
-        JMenuItem m3 = new JMenuItem("MenuItem3");
+        // creating items
+        JMenuItem mDevices = new JMenuItem("Devices");
+        JMenuItem mConn = new JMenuItem("Connect");
+        JMenuItem mDisconn = new JMenuItem("Disconnect");
 
-        // add menu items to menu
-        x.add(m1);
-        x.add(m2);
-        x.add(m3);
+        //adding items
+        networking.add(mDevices);
+        networking.add(mConn);
+        networking.add(mDisconn);
 
-        // add menu to menu bar
-        mb.add(x);
+        return networking;
+    }
+
+    JMenu fileMenu() {
+        JMenu file = new JMenu("File");
+
+        // creating items
+        JMenuItem exit = new JMenuItem("Exit");
+
+        // adding items
+        file.add(exit);
+
+        return file;
     }
 }
