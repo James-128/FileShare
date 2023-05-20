@@ -1,6 +1,9 @@
 package GUI;
 
+import GUI.Listeners.ExitListener;
+
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class GUIMenu {
     public JMenuBar menubar;
@@ -33,6 +36,9 @@ public class GUIMenu {
 
         // creating items
         JMenuItem exit = new JMenuItem("Exit");
+
+        // adding EventListeners
+        exit.addActionListener(new ExitListener());
 
         // adding items
         file.add(exit);
